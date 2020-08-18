@@ -1,0 +1,27 @@
+.input__textarea {
+	display: block;
+	width: 100%;
+	padding: gap('m');
+	overflow: auto;
+	color: color('neutrals-1');
+	font-family: font('medium');
+	font-size: fontSize('m');
+	letter-spacing: .25px;
+	border: 1.5px solid color('neutrals-5');
+	border-radius: 4px;
+	outline: none;
+	background-color: color('neutrals-9');
+	appearance: none;
+	box-shadow: inset 3px -3px 0 0 lighten(color('dark'), 98);
+	resize: none;
+	line-height: 1.4;
+
+	&:focus {
+		box-shadow: none;
+	}
+
+	.is-invalid & {
+		color: color('negative');
+		border-color: color('negative-lighter');
+	}
+}

@@ -1,0 +1,55 @@
+@import '@/01_fundaments/vars';
+
+.dashboardPanel {
+	display: flex;
+}
+
+.dashboardPanel__loader {
+	transform: translate(-50%,-50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+
+.dashboardPanel__inner {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: row;
+	margin-right: -(gap('xxs'));
+	margin-left: -(gap('xxs'));
+	width: 100%;
+}
+
+.dashboardPanel__overview {
+	width: 30%;
+	margin-right: -(gap('xxs'));
+	margin-left: -(gap('xxs'));
+}
+
+.dashboardPanel__overview__inner {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	padding: 0 gap('xxs');
+}
+
+.dashboardPanel__overview__action {
+	padding-top: gap('s');
+	button {
+		background-color: red;
+	}
+}
+
+.dashboardPanel__widgets {
+	position: relative;
+	width: 70%;
+	// padding: 0 gap('xxs');
+	margin-right: -(gap('xxs'));
+	margin-left: -(gap('xxs'));
+}
+
+.dashboardPanel__widgets__inner {
+	height: 100%;
+	border-radius: 8px;
+	background-color: rgba(color('brand-1'), .08);
+}

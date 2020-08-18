@@ -1,0 +1,44 @@
+// generate colors
+@each $colorName, $colorValue, $color in $colors {
+	&.button--#{$colorName} {
+		background-color: #{$colorValue};
+		color: #FFF;
+	}
+}
+
+
+@each $colorpairingName, $colorpairing in $colorpairings {
+	
+	.button--#{$colorpairingName} {
+		
+		@each $cpName, $cpValue, $cp in $colorpairing {
+			@if $cpName == 'primary' {
+				background-color: $cpValue;
+			}
+
+			@if $cpName == 'secondary' {
+				color: $cpValue;
+
+				.button__label {
+					color: $cpValue;
+				}
+
+				.button__symbol {
+					svg {
+						fill: $cpValue;
+					}
+				}
+			}
+
+			@if $cpName == 'tertiary' {
+				border: 1.5px solid rgba($cpValue, .1);
+				
+				.button__symbol {
+					svg {
+						fill: $cpValue;
+					}
+				}
+			}
+		}
+	}
+}

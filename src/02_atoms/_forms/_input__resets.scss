@@ -1,0 +1,24 @@
+input::-ms-clear,
+input::-ms-reveal {
+	display: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+
+input[type=number] {
+	-moz-appearance: textfield;
+}
+
+input:-webkit-autofill {
+	background-color: color('neutrals-9') !important;
+	-webkit-box-shadow: 0 0 0 30px color('neutrals-9') inset !important;
+
+	-webkit-text-fill-color: color('theme-3');
+}
+
+input::-webkit-credentials-auto-fill-button {
+    visibility: hidden;
+}

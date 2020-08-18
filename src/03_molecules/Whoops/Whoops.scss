@@ -1,0 +1,49 @@
+@import '@/01_fundaments/vars';
+
+.whoops {
+	display: block;
+	width: 45vw;
+}
+
+.whoops__header {
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+	font-family: font('bold');
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.whoops__symbol {
+	display: block;
+	flex-shrink: 0;
+	width: 74px;
+	height: 74px;
+
+	::v-deep svg {
+		fill: color('neutrals-1');
+	}
+}
+
+.whoops__header__subtitle {
+	padding: gap('xs') 0;
+	color: color('neutrals-1');
+	font-size: fontSize('s');
+	line-height: 1;
+}
+
+.whoops__header__title {
+	color: color('brand-1');
+}
+
+.whoops__content {
+	margin-top: gap('s');
+	padding: 0 gap('m');
+	color: color('neutrals-1');
+	font-family: font('medium');
+	text-align: center;
+}
+
+.whoops__submit {
+	padding: gap('xxl') gap('xxl') 0;
+}

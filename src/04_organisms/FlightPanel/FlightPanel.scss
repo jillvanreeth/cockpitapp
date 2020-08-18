@@ -1,0 +1,150 @@
+@import '@/01_fundaments/vars';
+@import '@/01_fundaments/transitions/_fade';
+
+
+.flightPanel {
+	display: flex;
+	flex: 1;
+	height: 100%;
+	overflow: hidden;
+	border-radius: 8px 8px 0 0;
+	background-color: color('light');
+	box-shadow: 0 -3px 22px 0 rgba(color('alt-1'), .1);
+}
+
+.flightPanel__loader {
+	transform: translate(-50%,-50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+
+.flightPanel__stops__bg {
+	transform: translate(-50%,-50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	height: 100%;
+
+	::v-deep svg {
+		fill: lighten(color('theme-6'), 1);
+	}
+}
+
+.flightPanel__stops {
+	position: relative;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	background-color: color('theme-6');
+}
+
+.flightPanel__stops__inner {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	padding: gap('xs') gap('xs') gap('l');
+}
+
+.flightPanel__actions {
+	display: flex;
+	// flex: 0;
+	align-items: center;
+	justify-content: flex-end;
+
+	& > * {
+		margin-left: gap('xs');
+
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+}
+
+.flightPanel__actions__item {
+	display: inline-flex;
+}
+
+.flightPanel__actions__item__button {
+	position: relative;
+	width: 48px;
+}
+
+.flightPanel__actions__alert {
+	position: absolute;
+	top: -5px;
+	right: -5px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 18px;
+	height: 18px;
+	color: color('light');
+	font-size: fontSize('xs');
+	border-radius: 50%;
+	background-color: color('brand-2');
+}
+
+.flightPanel__actions__item__symbol {
+	width: 20px;
+	height: 20px;
+
+	flex-shrink: 0;
+}
+
+.flightPanel__boardingData {
+	display: flex;
+	// flex: 0;
+	align-items: center;
+	justify-content: center;
+	margin-top: auto;
+	color: color('light');
+
+	& > * {
+		margin-left: gap('xl');
+
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+}
+
+.flightPanel__boardingData__item {
+	display: inline-flex;
+}
+
+.flightPanel__boardingData__capacity {
+	font-family: font('light');
+	font-size: 20px;
+
+	strong {
+		font-family: font('medium');
+		font-weight: normal;
+
+		&.is-invalid {
+			color: color('negative');
+		}
+	}
+}
+
+.flightPanel__boardingData__item__label {
+	font-family: font('semibold');
+	font-size: fontSize('s');
+
+	.is-invalid & {
+		color: color('negative');
+	}
+}
+
+.flightPanel__boardingData__item__symbol {
+	width: 23px;
+	height: 23px;
+	margin-right: gap('xs');
+
+	::v-deep svg {
+		fill: color('theme-5');
+	}
+}

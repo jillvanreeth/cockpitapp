@@ -1,0 +1,208 @@
+@import '@/01_fundaments/vars';
+@import '@/01_fundaments/transitions/_fade';
+@import '@/01_fundaments/transitions/_slideX';
+
+
+.flightEditPanel {
+	position: relative;
+	display: flex;
+	flex: 1;
+	height: 100%;
+	border-radius: 8px 8px 0 0;
+	background-color: color('theme-6');
+	box-shadow: 0 -3px 22px 0 rgba(color('alt-1'), .1);
+}
+
+.flightEditPanel__loader {
+	transform: translate(-50%,-50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+
+.flightEditPanel__inner {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	border-radius: 8px 8px 0 0;
+
+	&:before {
+		position: absolute;
+		top: -20px;
+		left: 0;
+		z-index: 1;
+		width: calc(50% - 30px);
+		height: 10px;
+		box-shadow: 0 20px 20px 0 rgba(color('theme-6'), 1);
+		content: '';
+	}
+}
+
+.flightEditPanel__overview {
+	display: flex;
+	flex: 1 1 50%;
+	overflow: auto;
+	background-color: color('theme-6');
+
+	&.is-open {
+		overflow: hidden;
+	}
+}
+
+.flightEditPanel__list {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	flex-wrap: wrap;
+}
+
+.flightEditPanel__list__item {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	padding: gap('s') gap('xl');
+	border-bottom: 1px solid color('theme-2');
+	flex: 1 0 100%;
+
+	&.is-active {
+		background-color: color('theme-2');
+	}
+}
+
+.flightEditPanel__item__content {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 40px;
+	color: color('light');
+	font-family: font('semibold');
+	font-size: fontSize('s');
+	letter-spacing: 1px;
+	text-transform: uppercase;
+
+	.is-passed & {
+		color: color('alt-2');
+	}
+}
+
+.flightEditPanel__content__symbol {
+	position: relative;
+	z-index: 1;
+	display: inline-flex;
+	width: 18px;
+	height: 18px;
+	margin-right: gap('xs');
+
+	flex-shrink: 0;
+
+	::v-deep svg {
+		fill: color('light');
+
+		.is-passed & {
+			fill: color('alt-2');
+		}
+	}
+
+	&.is-inserted {
+		transform: translateX(12px);
+		z-index: 2;
+
+		::v-deep svg {
+			fill: color('alt-4');
+
+			.is-passed & {
+				fill: color('alt-2');
+			}
+		}
+
+		& + .flightEditPanel__content__symbol {
+			transform: translateX(-28px);
+			margin-right: 0;
+
+			::v-deep svg {
+				fill: color('alt-2');
+
+				.is-passed & {
+					fill: color('alt-2');
+					opacity: .4;
+				}
+			}
+		}
+	}
+}
+
+
+
+.flightEditPanel__content__status {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 14px;
+	height: 14px;
+	margin-left: gap('xxs');
+	border-radius: 50%;
+	background-color: color('positive');
+}
+
+.flightEditPanel__content__status__symbol {
+	display: block;
+	width: 6px;
+	height: 6px;
+
+	flex-shrink: 0;
+
+	::v-deep svg {
+		fill: color('light');
+	}
+}
+
+.flightEditPanel__content__time {
+	margin-left: auto;
+}
+
+.flightEditPanel__item__actions {
+	transition: opacity 250ms ease 50ms;
+	display: flex;
+	height: 40px;
+	padding-left: gap('xl');
+}
+
+.flightEditPanel__actions__item {
+	margin-left: gap('xs');
+
+	&:first-child {
+		margin-left: 0;
+	}
+}
+
+.flightEditPanel__actions__button {
+	width: 40px;
+	height: 40px;
+	padding: 0;
+
+	.is-passed & {
+		opacity: .4;
+	}
+}
+
+.flightEditPanel__actions__button__symbol {
+	button[disabled] & {
+		::v-deep svg {
+			fill: color('theme-6');
+		}
+	}
+}
+
+.flightEditPanel__offcanvas {
+	position: relative;
+	z-index: 1;
+	flex: 1 1 50%;
+	padding: gap('xs');
+	background-color: color('light');
+}

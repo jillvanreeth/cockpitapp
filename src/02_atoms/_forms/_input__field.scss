@@ -1,0 +1,47 @@
+@import './_input__resets';
+
+.input__field {
+	display: block;
+	width: 100%;
+	height: 62px;
+	padding: 0 gap('m');
+	color: color('theme-3');
+	font-family: font('semibold');
+	font-size: fontSize('m');
+	letter-spacing: .25px;
+	border: 1.5px solid color('neutrals-5');
+	border-radius: 4px;
+	outline: none;
+	background-color: color('neutrals-10');
+	appearance: none;
+	box-shadow: inset 3px -3px 0 0 lighten(color('dark'), 98);
+
+	&:focus {
+		box-shadow: none;
+	}
+
+	.is-invalid & {
+		color: color('negative');
+		border-color: color('negative-lighter');
+	}
+
+	&.input__field--small {
+		height: 40px;
+	}
+
+	&[type='password'] {
+		font-family: Arial, Helvetica;
+		font-size: 40px;
+		letter-spacing: 10px;
+	}
+
+	&::placeholder {
+		color: color('neutrals-1');
+		font-family: font('semibold');
+
+		.is-invalid & {
+			color: color('negative');
+		}
+	}
+}
+

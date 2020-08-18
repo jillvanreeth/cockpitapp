@@ -1,0 +1,96 @@
+@import '@/01_fundaments/vars';
+@import '@/01_fundaments/transitions/_fade';
+
+
+.malfunctionsPanel {
+	position: relative;
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	height: 100%;
+	border-radius: 10px 10px 0 0;
+	background-color: color('light');
+}
+
+.malfunctionsPanel__loader {
+	transform: translate(-50%,-50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+
+.malfunctionsPanel__inner {
+	@include media('large') {
+		padding: gap('xl') (gap('xl') * 2) 0;
+	}
+
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	height: 100%; overflow: hidden;
+	padding: gap('xl') gap('xl') 0;
+}
+
+.malfunctionsPanel__theSteps {
+	position: relative;
+	display: flex;
+	width: 100%;
+	padding: gap('m') 0;
+	overflow: hidden;
+	margin: auto;
+
+	&:before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		width: 100%;
+		height: 20px;
+		background: linear-gradient(180deg, rgba(255,255,255,1) 40%, rgba(255,255,255,0) 90%);
+		content: '';
+	}
+}
+
+.malfunctionsPanel__theSteps__inner {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	overflow: auto;
+}
+
+.malfunctionsPanel__callout {
+	display: flex;
+	flex-direction: row;
+	padding: gap('xl') 0;
+}
+
+.malfunctionsPanel__callout__symbol {
+	display: block;
+	width: 19px;
+	height: 19px;
+	margin-right: gap('xs');
+	::v-deep svg {
+		color: color('negative');
+	}
+}
+
+.malfunctionsPanel__callout__label {
+	color: color('negative');
+	font-family: font('semibold');
+	font-size: fontSize('s');
+	text-transform: uppercase;
+}
+
+.malfunctionsPanel__outer {
+	margin-top: auto;
+	opacity: 1;
+}
+
+.malfunctionsPanel__nextBtn {
+	width: 100%;
+
+	::v-deep .button[disabled] svg {
+		fill: color('neutrals-4');
+	}
+}

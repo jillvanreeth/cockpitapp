@@ -1,0 +1,14 @@
+.heading {
+	display: block;
+	margin: 0;
+	padding: 0;
+	text-transform: uppercase;
+	font-family: font('bold');
+	line-height: 1;
+}
+
+@for $i from 0 through 6 {
+	.heading--#{$i} {
+		font-size: titleSize('h#{$i}');
+	}
+}

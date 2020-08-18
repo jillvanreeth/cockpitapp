@@ -1,0 +1,64 @@
+@import '@/01_fundaments/vars';
+@import '@/01_fundaments/transitions/_fade';
+
+.steps {
+	position: relative;
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	height: 100%;
+	border-radius: 10px 10px 0 0;
+	background-color: color('light');
+}
+
+.steps__inner {
+	@include media('large') {
+		padding: gap('xl') (gap('xl') * 2) 0;
+	}
+
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	height: 100%;
+	padding: gap('xl') gap('xl') 0;
+}
+
+.steps__theSteps {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	width: 100%;
+	padding: gap('xxl') 0;
+}
+
+.steps__outer {
+	margin-top: auto;
+	opacity: 1;
+}
+
+.steps__prevBtn {
+	position: absolute;
+	bottom: 100%;
+	left: gap('m');
+	padding-bottom: gap('m');
+}
+
+.steps__nextBtn {
+	transition: transform 250ms ease;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+
+	::v-deep svg {
+		fill: color('negative-darker');
+	}
+
+	::v-deep .button[disabled] svg {
+		fill: color('neutrals-4');
+	}
+
+	&.is-hidden {
+		transform: translateY(100%);
+	}
+}

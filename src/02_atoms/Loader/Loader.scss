@@ -1,0 +1,156 @@
+@import '@/01_fundaments/vars';
+
+.loader {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.loader__icon {
+	position: relative;
+	width: 28px;
+	height: 28px;
+	margin: 0;
+	padding: 0;
+	border: 7px solid color('alt-3');
+	border-radius: 50%;
+
+	.colorMode-is-dark & {
+		border-color: color('light');
+	}
+}
+
+.loader__icon__circle {
+	position: absolute;
+	top: -8px;
+	left: -8px;
+	z-index: 1;
+	width: 28px;
+	height: 28px;
+	margin: auto;
+}
+
+.loader__icon__path {
+	animation: dash 1.5s ease-in-out infinite, color 6s ease-in-out infinite;
+
+	stroke-dasharray: 150,200;
+	stroke-dashoffset: -10;
+	stroke-linecap: round;
+	
+	.colorMode-is-dark & {
+		animation: dash 1.5s ease-in-out infinite, colordark 6s ease-in-out infinite;
+	}
+}
+
+.loader__label {
+	position: relative;
+	display: flex;
+	margin: 0;
+	padding-top: gap('xs');
+	color: color('light');
+	font-family: font('bold');
+	font-size: 11px;
+	line-height: 1;
+	line-height: 1;
+	text-transform: uppercase;
+
+	.colorMode-is-dark & {
+		color: color('alt-3');
+
+		&:after {
+			animation: dotsDark 1.5s steps(5, end) infinite;
+			content: ' .';
+		}
+	}
+
+	&:after {
+		animation: dots 1.5s steps(5, end) infinite;
+		content: ' .';
+	}
+}
+
+@keyframes dotsdark {
+	0%,
+	20% {
+		color: rgba(color('alt-3'), 0);
+		text-shadow: 4px 0 0 rgba(color('alt-3'), 0), 8px 0 0 rgba(color('alt-3'), 0);
+	}
+	40% {
+		color: color('alt-3');
+		text-shadow: 4px 0 0 rgba(color('alt-3'), 0), 8px 0 0 rgba(color('alt-3'), 0);
+	}
+	60% {
+		text-shadow: 4px 0 0 color('alt-3'), 8px 0 0 rgba(color('alt-3'), 0);
+	}
+	80%,
+	100% {
+		text-shadow: 4px 0 0 color('alt-3'), 8px 0 0 rgba(color('alt-3'), 0);
+	}
+}
+
+@keyframes dots {
+	0%,
+	20% {
+		color: rgba(color('light'), 0);
+		text-shadow: 4px 0 0 rgba(color('light'), 0), 8px 0 0 rgba(color('light'), 0);
+	}
+	40% {
+		color: color('light');
+		text-shadow: 4px 0 0 rgba(color('light'), 0), 8px 0 0 rgba(color('light'), 0);
+	}
+	60% {
+		text-shadow: 4px 0 0 color('light'), 8px 0 0 rgba(color('light'), 0);
+	}
+	80%,
+	100% {
+		text-shadow: 4px 0 0 color('light'), 8px 0 0 color('light');
+	}
+}
+
+@keyframes dash {
+	0% {
+		stroke-dasharray: 1,200;
+		stroke-dashoffset: 0;
+	}
+	50% {
+		stroke-dasharray: 89,200;
+		stroke-dashoffset: -35;
+	}
+	100% {
+		stroke-dasharray: 89,200;
+		stroke-dashoffset: -124;
+	}
+}
+
+@keyframes color {
+	0% {
+		stroke: color('light');
+	}
+	40% {
+		stroke: color('light');
+	}
+	66% {
+		stroke: color('light');
+	}
+	80%,
+	90% {
+		stroke: color('light');
+	}
+}
+
+
+@keyframes colordark {
+	0% {
+		stroke: color('alt-3');
+	}
+	40% {
+		stroke: color('alt-3');
+	}
+	66% {
+		stroke: color('alt-3');
+	}
+	80%,
+	90% {
+		stroke: color('alt-3');
+	}
+}

@@ -1,0 +1,78 @@
+@import '@/01_fundaments/transitions/_fade';
+@import '@/01_fundaments/vars';
+
+
+.checklist {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: column;
+	width: 100%;
+	height: 100vh;
+	padding: (gap('xl') * 2) gap('s') 0;
+	overflow: hidden;
+	background: color('alt-3') url('./graphics/checklist-bg.png');
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+
+	&:before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: linear-gradient(-180deg, rgba(color('alt-2'),.3) 0%, rgba(color('alt-3'), .5) 100%);
+		content: '';
+	}
+}
+
+.checklist__prevBtn {
+	position: absolute;
+	top: -3px;
+	left: -3px;
+	padding: 6px;
+}
+
+.checklist__outer {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+	width: 100%;
+	max-width: 1080px;
+
+	&:before {
+		display: block;
+		visibility: hidden;
+		flex: 1;
+		content: '';
+	}
+}
+
+.checklist__logout {
+	display: flex;
+	flex: 1;
+	justify-content: flex-end;
+}
+
+.checklist__inner {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	width: 100%;
+	max-width: 1080px;
+	height: 100%;
+	padding-top: gap('xl');
+	overflow: hidden;
+}
+
+.checklist__title {
+	display: flex;
+	color: color('light');
+}

@@ -1,0 +1,68 @@
+@import '@/01_fundaments/vars';
+@import '@/01_fundaments/transitions/_fade';
+
+@import '@/02_atoms/_forms/_input__resets';
+@import '@/02_atoms/_forms/_input__field';
+@import '@/02_atoms/_forms/_input__label';
+@import '@/02_atoms/_forms/_input__error';
+
+.crewForm {
+	display: block;
+	min-width: 450px;
+	max-width: 45vw;
+}
+
+.crewForm__title {
+	display: block;
+	color: color('theme-3');
+	font-family: font('bold');
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.crewForm__inner {
+	display: block;
+	margin: 0;
+	padding-top: gap('xl');
+}
+
+.crewForm__theForm {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	margin: 0 (-(gap('xxs')));
+}
+
+.crewForm__theForm__field {
+	display: block;
+	flex: 2 1 auto;
+	padding: 0 gap('xxs');
+	&:first-child {
+		flex: 1 1 auto;
+	}
+}
+
+.crewForm__theForm__submit {
+	width: 100%;
+	padding: gap('m') gap('xxs') 0;
+}
+
+.crewForm__outer {
+	display: block;
+	padding-top: gap('xs');
+}
+
+.crewForm__button {
+	border: 1.25px solid color('neutrals-8');
+	background-color: color('neutrals-9');
+}
+
+.crewForm__button__label {
+	color: color('neutrals-1');
+}
+
+.crewForm__button__symbol {
+	::v-deep svg {
+		fill: color('neutrals-7');
+	}
+}

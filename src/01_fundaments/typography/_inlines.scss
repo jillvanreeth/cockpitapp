@@ -1,0 +1,14 @@
+@each $fontSize, $fontSizeValue in $fontSizes {
+	.fontSize--#{$fontSize} {
+		font-size: #{$fontSizeValue};
+	}
+}
+
+@each $font, $fontValue in $fonts {
+	.ff--#{$font} {
+		font-family: #{$fontValue};
+	}
+}
+
+
+

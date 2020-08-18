@@ -1,0 +1,54 @@
+@import '../../01_fundaments/vars';
+@import '../../01_fundaments/typography/inlines';
+@import '../../01_fundaments/colors/inlines';
+
+@import '../../02_atoms/_headings/headings';
+@import '../../02_atoms/_buttons/buttons';
+@import '../../02_atoms/_buttons/directionalButtons';
+@import '../../02_atoms/_buttons/specialButtons';
+
+
+.UI {
+	overflow: scroll;
+	text-align: left;
+}
+
+.section__title {
+	font-family: font('light');
+	font-size: fontSize('large');
+}
+
+.block {
+	display: block;
+	margin: 20px;
+}
+
+.block-wrap {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.block-color {
+	display: block;
+	width: 120px;
+	height: 50px;
+}
+
+.block-symbol {
+	display: block;
+	width: 50px;
+	height: 50px;
+}
+
+.block-name {
+	display: block;
+	padding-top: 10px;
+	color: color('dark');
+	font-size: fontSize('medium');
+}
+
+.break {
+	display: block;
+	clear: both;
+	width: 100%;
+}

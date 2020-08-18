@@ -1,0 +1,239 @@
+@import '@/01_fundaments/vars';
+
+@import '@/02_atoms/_forms/_input__resets';
+
+
+.checklistContent {
+	width: 100%;
+	margin: 0;
+	padding: 0 gap('xl');
+}
+
+.checklistContent__inner {
+	padding: 0 gap('xl');
+}
+
+.checklistContent__header {
+	display: flex;
+	margin: 0;
+}
+
+.checklistContent__header__title {
+	display: block;
+	margin: 0;
+	color: color('neutrals-1');
+	font-family: font('bold');
+	font-size: fontSize('xs');
+	line-height: 1;
+	text-transform: uppercase;
+
+	&:first-child {
+		flex: 0 0 60%;
+	}
+
+	// &:nth-child(2) {
+	// 	flex: 1 0 25%;
+	// }
+
+	// &:last-child {
+	// 	flex: 0 0 90px;
+	// 	margin-left: gap('m');
+	// }
+}
+
+.checklistContent__form {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	flex-direction: row;
+	margin: 0;
+	padding: gap('xs') 0 gap('xl') 0;
+
+	&:last-child {
+		padding-bottom: 0;
+	}
+}
+
+.checklistContent__desc {
+	flex: 0 1 60%;
+	padding-right: gap('xl');
+}
+
+.checklistContent__desc__title {
+	color: color('theme-2');
+	font-family: font('semibold');
+	font-size: fontSize('m');
+}
+
+.checklistContent__desc__body {
+	color: color('theme-5');
+	font-family: font('medium');
+	font-size: fontSize('s');
+}
+
+.checklistContent__fieldset {
+	display: flex;
+	flex: 2 0 40%;
+	justify-content: flex-end;
+	flex-wrap: wrap;
+	margin: -(gap('s')) 0 0;
+	padding: 0;
+}
+
+.checklistContent__field {
+	position: relative;
+	display: flex;
+	flex: 2 0 90px;
+	margin: gap('s') 0 0 ;
+}
+
+.checklistContent__checkset {
+	display: flex;
+	flex: 0 1 90px;
+	justify-content: flex-start;
+	flex-direction: row;
+	margin: gap('s') 0 0 gap('s');
+}
+
+.checklistContent__checkfield {
+	position: relative;
+	display: flex;
+	margin-right: gap('xs');
+
+	align-self: flex-start;
+
+	&:last-child {
+		margin-right: 0;
+	}
+}
+
+.checklistContent__input__helper {
+	transform: translateY(-50%);
+	position: absolute;
+	top: 50%;
+	right: gap('m') + gap('s');
+	color: color('alt-2');
+	font-family: font('semibold');
+	font-size: fontSize('xs');
+}
+
+.checklistContent__input__field {
+	display: block;
+	width: 100%;
+	height: 40px;
+	// margin-right: gap('s');
+	padding: 0 50px 0 gap('m');
+	color: color('theme-2');
+	font-family: font('semibold');
+	font-size: 18px;
+	letter-spacing: .25px;
+	border: 1.25px solid color('neutrals-5');
+	border-radius: 4px;
+	outline: none;
+	background-color: color('neutrals-9');
+	appearance: none;
+	box-shadow: inset 3px -3px 0 0 lighten(color('dark'), 98);
+
+	&::placeholder {
+		color: color('alt-2');
+		font-family: font('medium');
+		font-size: 18px;
+
+		.is-invalid & {
+			color: color('negative');
+		}
+	}
+}
+
+.checklistContent__button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	margin: 0;
+	padding: 0;
+	border: 1.25px solid color('neutrals-4');
+	border-radius: 10px;
+	background-color: color('neutrals-5');
+
+	&.has-content {
+		border-color: color('brand-2');
+		background-color: color('brand-2');
+	}
+}
+
+.checklistContent__button__symbol {
+	position: relative;
+	display: block;
+	width: 15px;
+	height: 15px;
+
+	.has-content & {
+		&:after {
+			position: absolute;
+			top: 4px;
+			left: 4px;
+			display: block;
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			background-color: color('light');
+			content: '';
+		}
+	}
+
+	::v-deep svg {
+		position: relative;
+		z-index: 2;
+		fill: color('alt-1');
+
+		.has-content & {
+			fill: darken(color('negative-darker'), 15);
+		}
+	}
+}
+
+.checklistContent__checkbox {
+	position: absolute;
+	left: -999999px;
+	opacity: 0;
+}
+
+.checklistContent__checkFaker {
+	transition: border-color 300ms ease;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	margin: 0;
+	padding: 0;
+	border: 1.25px solid color('neutrals-5');
+	border-radius: 10px;
+	background-color: color('light');
+	cursor: pointer;
+
+	.checklistContent__checkbox.is-valid + & {
+		border: 1.75px solid color('positive');
+	}
+}
+
+.checklistContent__check__symbol {
+	display: none;
+	width: 15px;
+	height: 15px;
+
+	.checklistContent__checkbox.is-valid + .checklistContent__checkFaker & {
+		display: block;
+
+		::v-deep svg {
+			fill: color('positive');
+		}
+	}
+
+	::v-deep svg {
+		transition: fill 300ms ease;
+		fill: color('alt-1');
+	}
+}

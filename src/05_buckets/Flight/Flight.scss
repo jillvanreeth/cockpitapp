@@ -1,0 +1,76 @@
+@import '@/01_fundaments/vars';
+
+.flight {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: column;
+	width: 100%;
+	height: 100vh;
+	padding: (gap('xl') * 2) gap('s') 0;
+	overflow: hidden;
+	background-color: color('alt-3');
+}
+
+.flight__outer {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+	width: 100%;
+	max-width: 1080px;
+
+	&:before {
+		display: block;
+		visibility: hidden;
+		flex: 1;
+		content: '';
+	}
+}
+
+.flight__prevBtn {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 2px;
+}
+
+.flight__actions {
+	display: flex;
+	flex: 1;
+	align-items: center;
+	justify-content: flex-end;
+
+	& > * {
+		margin-left: gap('xxs');
+
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+}
+
+.flight__actions__item {
+	display: inline-flex;
+}
+
+.flight__inner {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	width: 100%;
+	max-width: 1080px;
+	height: 100%;
+	padding-top: gap('xl');
+	overflow: hidden;
+}
+
+.flight__title {
+	display: flex;
+	color: color('light');
+}

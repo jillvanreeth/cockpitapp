@@ -1,0 +1,11 @@
+.weather {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	line-height: 1;
+}
+
+.weather__symbol {
+	display: block;
+	flex-shrink: 0;
+}

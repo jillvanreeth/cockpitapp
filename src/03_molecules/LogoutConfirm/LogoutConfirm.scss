@@ -1,0 +1,46 @@
+@import '@/01_fundaments/vars';
+
+.logoutConfirm {
+	display: block;
+	min-width: 450px;
+	max-width: 45vw;
+}
+
+.logoutConfirm__header {
+	display: block;
+	font-family: font('bold');
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.logoutConfirm__header__subtitle {
+	padding-bottom: gap('xs');
+	color: color('neutrals-1');
+	font-size: fontSize('s');
+	line-height: 1;
+}
+
+.logoutConfirm__header__title {
+	color: color('theme-3');
+}
+
+.logoutConfirm__content {
+	margin-top: gap('s');
+	padding: 0 gap('m');
+	color: color('neutrals-1');
+	font-family: font('medium');
+	text-align: center;
+	font-size: fontSize('m');
+}
+
+.logoutConfirm__actions {
+	padding: gap('xxl') gap('xxl') 0;
+}
+
+.logoutConfirm__actions__item {
+	padding-top: gap('xs');
+	
+	&:first-child {
+		padding-top: 0;
+	}
+}

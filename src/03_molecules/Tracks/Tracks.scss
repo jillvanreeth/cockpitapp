@@ -1,0 +1,139 @@
+@import '@/01_fundaments/vars';
+
+.tracks {
+	display: block;
+	width: 100%;
+}
+
+.tracks__title {
+	color: color('theme-3');
+	text-align: center;
+}
+
+.tracks__inner {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	padding: gap('xl') 120px 0;
+}
+
+.tracks__item {
+	position: relative;
+	width: (100% / 3);
+	padding: 0 1%;
+
+	flex-shrink: 0;
+}
+
+.tracks__item__sizer {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 0;
+	padding-top: 100%;
+}
+
+.tracks__item__inner {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.tracks__radio {
+	position: absolute;
+	left: -999999px;
+	opacity: 0;
+}
+
+.tracks__radioFaker {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	height: 100%;
+	border: 1.25px solid color('neutrals-4');
+	border-radius: 10px;
+	background-color: color('neutrals-5');
+
+	.tracks__radio:checked + & {
+		border: 2.5px solid #577493;
+		background-color: color('light');
+		box-shadow: 0 0 0 2.5px #E1E7ED, 0 0 0 5px #F7F7F7;
+	}
+}
+
+.tracks__checked__symbol {
+	@include media('large') {
+		top: 15px;
+		right: 15px;
+		width: 32px;
+		height: 32px;
+	}
+
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	width: 20px;
+	height: 20px;
+	border-radius: 14px;
+	background-color: color('brand-1');
+	box-shadow: 0 0 0 1.5px #294B67, 0 0 0 3px #A4AFB5;
+
+	.tracks__radio:checked + .tracks__radioFaker & {
+		display: flex;
+	}
+}
+
+.tracks__checked__theSymbol {
+	display: block;
+	width: 9px;
+	height: 9px;
+
+	::v-deep svg {
+		fill: color('light');
+	}
+}
+
+.tracks__item__symbol {
+	@include media('large') {
+		width: 45px;
+		height: 45px;
+	}
+
+	display: block;
+	width: 25px;
+	height: 25px;
+
+	::v-deep svg {
+		fill: color('neutrals-1');
+	}
+
+	.tracks__radio:checked + .tracks__radioFaker & {
+		::v-deep svg {
+			fill: color('brand-1');
+		}
+	}
+}
+
+.tracks__item__label {
+	@include media('medium') {
+		font-size: fontSize('s');
+	}
+
+	margin-top: gap('s');
+	color: color('neutrals-1');
+	font-family: font('semibold');
+	text-shadow: .25px .25px 0 color('alt-4');
+	text-transform: uppercase;
+	font-size: fontSize('xs');
+
+	.tracks__radio:checked + .tracks__radioFaker & {
+		color: color('brand-1');
+	}
+}

@@ -1,0 +1,121 @@
+@import '@/01_fundaments/vars';
+@import '@/01_fundaments/transitions/_fade';
+
+@import '@/02_atoms/_forms/_input__field';
+@import '@/02_atoms/_forms/_input__label';
+@import '@/02_atoms/_forms/_input__error';
+
+
+.pinConfirm {
+	position: relative;
+	display: block;
+}
+
+.pinConfirm__loader {
+	transform: translate(-50%,-50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+
+.pinConfirm__inner {
+	display: block;
+	width: 65vw;
+}
+
+.pinConfirm__header {
+	display: flex;
+	align-items: center;
+	font-family: font('bold');
+	text-align: center;
+	text-transform: uppercase;
+
+	flex-flow: column wrap;
+}
+
+.pinConfirm__header__subtitle {
+	padding: gap('xs') 0;
+	color: color('neutrals-1');
+	font-size: fontSize('s');
+	line-height: 1;
+}
+
+.pinConfirm__header__title {
+	color: color('brand-1');
+}
+
+.pinConfirm__form {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding-top: gap('xl');
+}
+
+.pinConfirm__form__field {
+	position: relative;
+	width: 200px;
+	margin-bottom: gap('xl');
+}
+
+.pinConfirm__input__field {
+	-webkit-text-fill-color: color('neutrals-0');
+}
+
+.pinConfirm__form__error {
+	position: absolute;
+	top: 100%;
+	left: 0;
+}
+
+.pinConfirm__keyboard {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	flex-flow: row wrap;
+}
+
+.pinConfirm__keyboard__key {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 60px;
+	height: 60px;
+	margin-top: gap('xs');
+	border: 2px solid color('neutrals-5');
+	border-radius: 13px;
+	background-color: color('neutrals-6');
+
+	&.is-symbol {
+		background-color: color('light');
+	}
+
+	&:first-child {
+		order: 7;
+	}
+
+	&:nth-child(12) {
+		order: 8;
+	}
+}
+.pinConfirm__keyboard__key__label {
+	color: color('theme-6');
+	font-family: font('bold');
+	font-size: fontSize('l');
+}
+
+.pinConfirm__keyboard__key__symbol {
+	display: block;
+	width: 20px;
+	height: 20px;
+
+	::v-deep svg {
+		fill: color('neutrals-2');
+	}
+}
+
+.pinConfirm__action {
+	width: 100%;
+	padding-top: gap('xxl');
+}

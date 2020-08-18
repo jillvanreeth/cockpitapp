@@ -1,0 +1,67 @@
+@import 'functions';
+@import 'general';
+
+$fontSizes: (
+	'xxs' : 10.5px,
+	'xs'  : 12px,
+	's'   : 14px,
+	'm'  	: 16px,
+	'l'   : 24px,
+	'xl'  : 28px,
+	'xxl' : 36px,
+);
+
+$titleSizes: (
+	'h6' 	: 14px,
+	'h5'  : 16px,
+	'h4'  : 26px,
+	'h3'  : 36px,
+	'h2'  : 48px,
+	'h1'	:	68px,
+	'h0' 	: 72px
+);
+
+$font-light: 'Geogrotesque-Light';
+$font-medium: 'Geogrotesque-Medium';
+$font-semibold: 'Geogrotesque-SemiBold';
+$font-bold: 'Geogrotesque-Bold';
+
+@font-face {
+  font-family: $font-light;
+  src: url('/fonts/Geogrotesque-Light.woff2') format('woff2'),
+  url('/fonts/Geogrotesque-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-medium;
+  src: url('/fonts/Geogrotesque-Medium.woff2') format('woff2'),
+  url('/fonts/Geogrotesque-Medium.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-semibold;
+  src: url('/fonts/Geogrotesque-SemiBold.woff2') format('woff2'),
+  url('/fonts/Geogrotesque-SemiBold.woff.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: $font-bold;
+  src: url('/fonts/Geogrotesque-Bold.woff2') format('woff2'),
+  url('/fonts/Geogrotesque-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+$fonts: (
+	'light'  	: $font-light,
+	'medium'  : $font-medium,
+	'semibold': $font-semibold,
+	'bold'  	: $font-bold,
+);

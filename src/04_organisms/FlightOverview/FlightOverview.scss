@@ -1,0 +1,362 @@
+@import '@/01_fundaments/vars';
+
+.flightOverview {
+	position: relative;
+	display: flex;
+	flex: 1;
+	height: 100%;
+	border-radius: 8px 8px 0 0;
+	background-color: color('theme-6');
+	box-shadow: 0 -3px 22px 0 rgba(color('alt-1'), .1);
+}
+
+.flightOverview__loader {
+	transform: translate(-50%,-50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+
+.flightOverview__content {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	// overflow: hidden;
+	// border-radius: 8px 8px 0 0;
+
+	// &:before {
+	// 	position: absolute;
+	// 	top: -20px;
+	// 	left: 0;
+	// 	z-index: 1;
+	// 	width: calc(50% - 30px);
+	// 	height: 10px;
+	// 	box-shadow: 0 20px 20px 0 rgba(color('theme-6'), 1);
+	// 	content: '';
+	// }
+}
+.flightOverview__inner {
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	// height: 100%;
+	overflow: hidden;
+	border-radius: 8px 8px 0 0;
+
+	&:before {
+		position: absolute;
+		top: -20px;
+		left: 0;
+		z-index: 1;
+		width: calc(50% - 30px);
+		height: 10px;
+		box-shadow: 0 20px 20px 0 rgba(color('theme-6'), 1);
+		content: '';
+	}
+}
+
+.flightOverview__summary {
+	position: relative;
+	z-index: 1;
+	flex: 1 1 50%;
+	padding: gap('xs');
+	overflow: auto;
+	background-color: color('light');
+}
+
+.flightOverview__flightInfo {
+	display: block;
+	padding: gap('l');
+	font-family: font('bold');
+	line-height: 1;
+	text-transform: uppercase;
+	border: 1px solid color('neutrals-8');
+	border-radius: 5px;
+	background-color: color('neutrals-10');
+}
+
+.flightOverview__subtitle {
+	display: block;
+	color: color('neutrals-1');
+	font-family: font('bold');
+	font-size: fontSize('s');
+	letter-spacing: 1.3px;
+	text-transform: uppercase;
+}
+
+.flightOverview__flightInfo__dateDay {
+	display: block;
+	color: color('neutrals-1');
+	font-size: fontSize('xs');
+	letter-spacing: 1.3px;
+}
+
+.flightOverview__flightInfo__date {
+	display: block;
+	padding-top: gap('xxs');
+	color: color('brand-1');
+	font-size: fontSize('xxl');
+	letter-spacing: 1.3px;
+}
+
+.flightOverview__flightInfo__trackInfo {
+	display: flex;
+	align-items: center;
+	padding-top: gap('s');
+}
+
+.flightOverview__flightInfo__theTrack {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: 38px;
+	padding: 0 gap('s');
+	border-radius: 4px;
+	background-color: color('brand-1');
+
+	align-self: flex-start;
+}
+
+.flightOverview__flightInfo__theTrack__symbol {
+	display: block;
+	width: 16px;
+	height: 16px;
+	margin-right: gap('xxs');
+
+	flex-shrink: 0;
+
+	::v-deep svg {
+		fill: color('light');
+	}
+}
+
+.flightOverview__flightInfo__theTrack__label {
+	color: color('light');
+	font-family: font('semibold');
+	font-size: fontSize('s');
+	line-height: 1;
+	text-transform: none;
+}
+
+.flightOverview__flightInfo__theShift__label {
+	padding-left: gap('s');
+	color: color('theme-6');
+	font-family: font('semibold');
+	font-size: fontSize('s');
+	line-height: 1;
+	text-transform: none;
+}
+
+.flightOverview__passengersInfo {
+	display: block;
+	padding: gap('xl');
+}
+
+.flightOverview__passengersInfo__total {
+	display: flex;
+	justify-content: flex-start;
+	padding: gap('s') 0;
+}
+
+.flightOverview__passengersInfo__total__item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: gap('xxs') gap('l');
+	border-left: 1px solid color('neutrals-8');
+
+	&:first-child {
+		padding-left: 0;
+		border: none;
+	}
+}
+
+.flightOverview__passengersInfo__total__symbol {
+	display: block;
+	width: 45px;
+	height: 30px;
+
+	::v-deep svg {
+		fill: color('neutrals-1');
+	}
+}
+
+.flightOverview__passengersInfo__total__label {
+	display: block;
+	padding-left: gap('s');
+	color: color('alt-1');
+	font-family: font('bold');
+	font-size: fontSize('l');
+}
+
+.flightOverview__notifications {
+	display: block;
+	padding: gap('xl');
+}
+
+.flightOverview__notifications__inner {
+	display: block;
+	margin-top: gap('xs');
+	padding: 0;
+	border: 1px solid color('neutrals-7');
+	border-radius: 5px;
+	background-color: color('neutrals-9');
+}
+
+.flightOverview__notifications__list {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.flightOverview__notifications__list__item {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	padding: gap('s') gap('l');
+	border-top: 1px solid color('neutrals-7');
+
+	&:first-child {
+		border: none;
+	}
+}
+
+.flightOverview__notifications__item__content {
+	position: relative;
+	display: flex;
+	align-items: flex-start;
+	flex-direction: column;
+	width: 100%;
+}
+
+.flightOverview__notifications__content__symbol {
+	transform: translateY(-50%);
+	position: absolute;
+	top: 50%;
+	right: 0;
+	display: inline-flex;
+	width: 18px;
+	height: 18px;
+
+	flex-shrink: 0;
+
+	::v-deep svg {
+		fill: color('neutrals-1');
+	}
+}
+
+.flightOverview__notifications__content__time {
+	display: block;
+	color: color('brand-1');
+	font-family: font('bold');
+}
+
+.flightOverview__notifications__content__label {
+	padding-right: gap('l');
+	color: color('neutrals-1');
+	font-family: font('medium');
+}
+
+.flightOverview__overview {
+	display: flex;
+	flex: 1 1 50%;
+	overflow: auto;
+	background-color: color('theme-6');
+}
+
+.flightOverview__list {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.flightOverview__list__item {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	padding: gap('s') gap('xl');
+	border-bottom: 1px solid color('theme-2');
+
+	&.is-active {
+		background-color: color('theme-2');
+	}
+}
+
+.flightOverview__item__content {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 40px;
+	color: color('light');
+	font-family: font('semibold');
+	font-size: fontSize('s');
+	letter-spacing: 1px;
+	text-transform: uppercase;
+
+	.is-passed & {
+		color: color('alt-2');
+	}
+}
+
+.flightOverview__content__symbol {
+	display: inline-flex;
+	width: 18px;
+	height: 18px;
+	margin-right: gap('xs');
+
+	flex-shrink: 0;
+
+	::v-deep svg {
+		fill: color('light');
+
+		.is-passed & {
+			fill: color('alt-2');
+		}
+	}
+}
+
+.flightOverview__content__timeDiff {
+	margin-left: auto;
+	color: color('alt-2');
+}
+
+.flightOverview__content__time {
+	margin-left: gap('s');
+}
+
+.flightOverview__actions {
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	margin-top: auto;
+	background-color: color('light');
+
+	&:after {
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: -1;
+		display: block;
+		width: 50%;
+		height: 20px;
+		background-color: color('theme-6');
+		content: '';
+	}
+}
+
+.flightOverview__actions__button .flightOverview__actions__symbol {
+	margin-right: gap('xs');
+
+	::v-deep svg {
+		fill: color('light');
+	}
+}

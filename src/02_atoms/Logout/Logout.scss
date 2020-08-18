@@ -1,0 +1,21 @@
+@import '@/01_fundaments/vars';
+
+.logout {
+	display: block;
+	padding: 2px;
+}
+
+.logout__button {
+	width: 48px;
+}
+
+.logout__button__symbol {
+	width: 24px;
+	height: 24px;
+	margin-right: -5px;
+	color: inherit;
+
+	::v-deep svg g {
+		fill: color('neutrals-0');
+	}
+}

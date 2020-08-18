@@ -1,0 +1,29 @@
+.input__error {
+	display: none;
+	opacity: 0;
+	transition: opacity 250ms ease;
+
+	.is-invalid > & {
+		display: flex;
+		opacity: 1;
+		transition: opacity 250ms ease;
+		align-items: center;
+		padding: gap('xs') 0 gap('xxs');
+	}
+}
+
+.input__error__symbol {
+	display: block; flex-shrink: 0;
+	width: 16px; height: 16px;
+	margin-right: gap('xs');
+
+	::v-deep svg {
+		fill: color('negative-darker');
+	}
+}
+
+.input__error__label {
+	color: color('negative-darker');
+	font-size: fontSize('m');line-height: 1;
+	font-family: font('semibold')
+}

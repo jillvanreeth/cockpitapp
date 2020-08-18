@@ -1,0 +1,20 @@
+@import 'functions';
+
+$breakpoints: (
+	'small' 		:  500px,
+	'medium' 		:  768px,
+	'large' 		: 1024px,
+	'xlarge' 		: 1140px,
+	'xxlarge' 	: 1240px
+);
+
+$gaps: (
+	'none'	:	0px,
+	'xxs'		: 5px,
+	'xs'		: 10px,
+	's'			: 15px,
+	'm'			: 20px,
+	'l'			: 25px,
+	'xl'		: 30px,
+	'xxl'		: 50px
+);

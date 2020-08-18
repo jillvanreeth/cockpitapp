@@ -1,0 +1,18 @@
+.slideX-enter-active {
+	transition: all .3s ease;
+}
+
+.slideX-leave-active {
+	transition: all .3s ease;
+}
+
+.slideX-enter {
+	transform: translateX(100%);
+	opacity: 0;
+}
+
+.slideX-fade-leave-to {
+	transition: all .3s ease;
+	transform: translateX(50%);
+	opacity: 0;
+}

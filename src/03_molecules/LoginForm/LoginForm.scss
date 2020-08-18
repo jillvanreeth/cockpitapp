@@ -1,0 +1,68 @@
+@import '@/01_fundaments/vars';
+@import '@/01_fundaments/transitions/_fade';
+
+@import '@/02_atoms/_forms/_input__resets';
+@import '@/02_atoms/_forms/_input__field';
+@import '@/02_atoms/_forms/_input__label';
+@import '@/02_atoms/_forms/_input__error';
+
+.loginForm {
+	display: block;
+	min-height: 470px;
+}
+
+.loginForm__loader {
+	transform: translate(-50%,-50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+
+.loginForm__header {
+	display: block;
+	font-family: font('bold');
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.loginForm__header__subtitle {
+	padding-bottom: gap('xs');
+	color: color('alt-3');
+	font-size: fontSize('s');
+	line-height: 1;
+}
+
+.loginForm__header__title {
+	color: color('light');
+}
+
+.loginForm__inner {
+	display: block;
+	margin: 0;
+	margin-top: gap('xl');
+	padding: 0;
+}
+
+.loginForm__theForm {
+	display: block;
+}
+
+.loginForm__theForm__inner {
+	display: block;
+	padding: gap('xl');
+	border-radius: 10px;
+	background-color: color('light');
+}
+
+.loginForm__theForm__field {
+	display: block;
+	margin-top: gap('l');
+
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+.loginForm__theForm__submit {
+	margin-top: gap('m');
+}

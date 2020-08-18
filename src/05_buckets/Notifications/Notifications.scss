@@ -1,0 +1,68 @@
+@import '@/01_fundaments/vars';
+
+.notifications {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	flex-direction: column;
+	width: 100%;
+	height: 100vh;
+	padding: (gap('xl') * 2) gap('s') 0;
+	overflow: hidden;
+	background-color: color('alt-3');
+}
+
+.notifications__outer {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: row;
+	width: 100%;
+	max-width: 1080px;
+
+	&:before {
+		display: block;
+		visibility: hidden;
+		flex: 1;
+		content: '';
+	}
+}
+
+.notifications__actions {
+	display: flex;
+	flex: 1;
+	align-items: center;
+	justify-content: flex-end;
+
+	& > * {
+		margin-left: gap('xxs');
+
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+}
+
+.notifications__actions__item {
+	display: inline-flex;
+}
+
+.notifications__inner {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	width: 100%;
+	max-width: 1080px;
+	height: calc(100% - 30px);
+	padding-top: gap('xl');
+}
+
+.notifications__title {
+	display: flex;
+	color: color('light');
+}

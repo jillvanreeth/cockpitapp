@@ -1,0 +1,58 @@
+@import '@/01_fundaments/vars';
+@import '@/01_fundaments/transitions/_fade';
+
+
+.checklistConfirm {
+	position: relative;
+	display: block;	
+}
+
+.checklistConfirm__inner {
+	display: block;
+	width: 65vw;
+
+	&.is-loading {
+		opacity: 0;
+	}
+}
+
+.checklistConfirm__loader {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+
+.checklistConfirm__header {
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+	font-family: font('bold');
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.checklistConfirm__header__subtitle {
+	padding: gap('xs') 0;
+	color: color('neutrals-1');
+	font-size: fontSize('s');
+	line-height: 1;
+}
+
+.checklistConfirm__header__title {
+	color: color('brand-1');
+}
+
+.checklistConfirm__content {
+	margin-top: gap('s');
+	padding: 0 gap('m');
+	color: color('neutrals-1');
+	font-family: font('medium');
+	text-align: center;
+}
+
+.checklistConfirm__submit {
+	width: 50vw;
+	margin: 0 auto;
+	padding: gap('xxl') gap('xxl') 0;
+}

@@ -1,0 +1,162 @@
+@import '@/01_fundaments/vars';
+
+@import '@/02_atoms/_forms/_input__field';
+@import '@/02_atoms/_forms/_input__label';
+@import '@/02_atoms/_forms/_input__select';
+@import '@/02_atoms/_forms/_input__textarea';
+@import '@/02_atoms/_forms/_input__error';
+
+
+.flightInsertForm {
+	position: relative;
+	z-index: 9;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+}
+
+.flightInsertForm__loader {
+	transform: translate(-50%,-50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+
+.flightInsertForm__actions {
+	margin-left: auto;
+}
+
+.flightInsertForm__theCloser {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 50px;
+	height: 50px;
+	border: 2px solid color('neutrals-4');
+	border-radius: 13px;
+	background-color: color('neutrals-5');
+}
+
+
+.flightInsertForm__theCloser__symbol {
+	display: block;
+	width: 15px;
+	height: 15px;
+
+	::v-deep svg {
+		color: color('alt-1');
+
+		.is-urgent & {
+			color: color('light');
+		}
+	}
+}
+
+.flightInsertForm__inner {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	padding: 0 gap('s') gap('xs');
+
+	&.is-loading {
+		opacity: 0;
+	}
+
+	&.is-success {
+		opacity: 0;
+	}
+}
+
+.flightInsertForm__title {
+	color: color('brand-1');
+}
+
+.flightInsertForm__form {
+	transition: opacity 250ms ease;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	padding-top: gap('xl');
+	opacity: 1;
+	&.is-loading {
+		opacity: 0;
+	}
+}
+
+.flightInsertForm__form__field {
+	position: relative;
+	margin-top: gap('xs');
+
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+.flightInsertForm__form__fieldset {
+	padding-top: gap('l');
+}
+
+.flightInsertForm__input__wrap {
+	position: relative;
+}
+
+.flightInsertForm__input__select {
+	position: relative;
+	color: color('light');
+
+	select {
+		text-indent: 30px;
+	}
+}
+
+.flightInsertForm__input__select__symbol {
+	transform: translateY(-50%);
+	position: absolute;
+	top: 50%;
+	width: 19px;
+	height: 19px;	
+}
+
+.flightInsertForm__input__field {
+	color: color('theme-2');
+	font-size: titleSize('h4');
+	background-color: color('neutrals-9');
+	box-shadow: inset 3px -3px 0 0 lighten(color('dark'), 98);
+		
+	&::placeholder {
+		color: color('alt-2');
+		font-family: font('medium');
+		font-size: titleSize('h4');
+	}
+}
+
+.flightInsertForm__input__helper {
+	transform: translateY(-50%);
+	position: absolute;
+	top: 50%;
+	right: gap('m');
+	color: color('alt-2');
+	font-family: font('semibold');
+	font-size: fontSize('xs');
+}
+
+.flightInsertForm__form__submit {
+	margin-top: auto;
+	padding-top: gap('xxl');
+}
+
+.flightInsertForm__success {
+	transform: translate(-50%,-50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 70%;
+	
+	::v-deep .success {
+		width: auto;
+	}
+}

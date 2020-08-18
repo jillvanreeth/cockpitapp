@@ -1,0 +1,110 @@
+@import '@/01_fundaments/vars';
+@import '@/01_fundaments/transitions/_fade';
+
+
+.malfunctionsOverview {
+	display: flex;
+	flex: 1;
+	height: 100%;
+	overflow: hidden;
+	border-radius: 8px 8px 0 0;
+	background-color: color('light');
+	box-shadow: 0 -3px 22px 0 rgba(color('alt-1'), .1);
+}
+
+.malfunctionsOverView__loader {
+	transform: translate(-50%,-50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+
+.malfunctionsOverview__inner {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	overflow: scroll;
+	padding-bottom: 90px;
+}
+
+table {
+	display: table;
+	width: 100%;
+	text-align: left;
+	border-collapse: collapse;
+
+	th {
+		position: sticky;
+		top: 0;
+		padding: gap('l') gap('xl');
+		color: color('neutrals-1');
+		font-family: font('bold');
+		font-size: fontSize('xs');
+		font-weight: normal;
+		vertical-align: middle;
+		white-space: nowrap;
+		letter-spacing: .75px;
+		text-transform: uppercase;
+		background: linear-gradient(0deg, rgba(color('neutrals-8'),.3) 0%, rgba(color('neutrals-9'),0) 30%);
+		background-color: color('neutrals-9');
+
+		&:first-child {
+			padding-left: gap('xxl');
+		}
+	}
+
+	td {
+		padding: gap('l') gap('xl');
+		font-family: font('medium');
+		font-size: fontSize('m');
+		font-weight: normal;
+		vertical-align: top;
+
+		&:first-child {
+			padding-left: gap('xxl');
+		}
+	}
+}
+
+thead {
+	background-color: color('neutrals-9');
+}
+
+tbody {
+	color: color('theme-6');
+	border: none;
+	border-bottom: 1px solid color('neutrals-6');
+
+	tr {
+		border-top: 1px solid color('neutrals-6');
+
+		&:nth-child(even) {
+			background-color: color('neutrals-10');
+		}
+
+		td:nth-child(-n + 2) {
+			font-family: font('semibold');
+			font-size: fontSize('s');
+			white-space: nowrap;
+		}
+	}
+
+	span {
+		color: color('neutrals-7');
+		line-height: 1;
+	}
+}
+
+.malfunctions__actions {
+	margin-top: auto;
+	position: absolute; bottom: 0; width: 100%;
+}
+
+.malfunctions__actions__button .malfunctions__actions__symbol {
+	margin-right: gap('xs');
+
+	::v-deep svg {
+		fill: color('light');
+	}
+}

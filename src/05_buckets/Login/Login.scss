@@ -1,0 +1,105 @@
+@import '@/01_fundaments/vars';
+@import '@/01_fundaments/transitions/_fade';
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+.login {
+	display: flex;
+	flex: 1;
+	justify-content: center;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	padding: gap('xxl');
+	background-color: color('dark');
+	background-image: url('./graphics/login-bg.jpg');
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+
+.login__preloader {
+	animation: fadeIn 500ms;
+	display: flex;
+	flex: 0;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	width: 295px;
+	margin: 0 auto;
+}
+
+.login__preloader__loader {
+	position: absolute;
+	bottom: gap('xxl');
+	left: 50%;
+}
+
+.login__preloader__brand {
+	display: block;
+	width: 200px;
+	height: 120px;
+
+	flex-shrink: 0;
+}
+
+.login__preloader__header {
+	display: block;
+	text-align: left;
+}
+
+.login__preloader__header__subtitle {
+	display: block;
+	padding: gap('m') 0 gap('xs');
+	color: color('alt-3');
+	font-family: font('medium');
+	font-size: fontSize('l');
+	line-height: 1;
+}
+
+.login__preloader__header__title {
+	display: block;
+	color: color('light');
+	text-transform: uppercase;
+}
+
+.login__theLogin {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+}
+
+.login__inner {
+	min-width: 450px;
+	max-width: 45vw;
+	margin: auto auto 0;
+
+	align-self: center;
+}
+
+
+.login__outer {
+	width: 45vw;
+	margin: auto auto 0;
+	text-align: center;
+
+	align-self: center;
+}
+
+.login__help {
+	color: color('light');
+	font-family: font('bold');
+	font-size: fontSize('xs');
+	letter-spacing: 1.25px;
+	text-transform: uppercase;
+	cursor: pointer;
+}

@@ -1,0 +1,32 @@
+{
+  "name": "cockpit_app",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "core-js": "^3.4.4",
+    "register-service-worker": "^1.7.1",
+    "vue": "^2.6.10",
+    "vue-router": "^3.1.5",
+    "vuex": "^3.1.2"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^4.1.0",
+    "@vue/cli-plugin-pwa": "^4.3.0",
+    "@vue/cli-service": "^4.1.0",
+    "html-loader": "^0.5.5",
+    "node-sass": "^4.13.0",
+    "sass-loader": "^7.3.1",
+    "vue-svg-loader": "^0.15.0",
+    "vue-template-compiler": "^2.6.11",
+    "webpack": "^4.41.5"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}

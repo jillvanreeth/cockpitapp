@@ -1,0 +1,50 @@
+@import '@/01_fundaments/vars';
+
+.success {
+	display: block;
+	max-width: 550px;
+  width: 50vw;
+}
+
+.success__header {
+	display: flex;
+	flex-flow: column wrap;
+	align-items: center;
+	font-family: font('bold');
+	text-align: center;
+	text-transform: uppercase;
+}
+
+.success__symbol {
+	display: block;
+	flex-shrink: 0;
+	width: 74px;
+	height: 74px;
+
+	::v-deep svg {
+		fill: color('neutrals-1');
+	}
+}
+
+.success__header__subtitle {
+	padding: gap('xs') 0;
+	color: color('neutrals-1');
+	font-size: fontSize('s');
+	line-height: 1;
+}
+
+.success__header__title {
+	color: color('brand-1');
+}
+
+.success__content {
+	margin-top: gap('s');
+	padding: 0;
+	color: color('neutrals-1');
+	font-family: font('medium');
+	text-align: center;
+}
+
+.success__submit {
+	padding: gap('xxl') 0 0;
+}

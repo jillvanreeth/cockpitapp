@@ -1,0 +1,72 @@
+@import '@/01_fundaments/transitions/_slide';
+@import '@/01_fundaments/vars';
+
+.offcanvas {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 99;
+	width: 100%;
+	padding: 0 gap('xs');
+}
+
+.offcanvas__inner {
+	position: relative;
+	z-index: 9;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	padding: gap('xs') gap('xs') gap('m');
+	border-radius: 10px 10px 0 0;
+	background-color: color('light');
+
+	.is-urgent & {
+		background-color: color('theme-6');
+	}
+}
+
+.offcanvas__actions {
+	position: relative;
+	z-index: 99;
+	margin-left: auto;
+}
+
+.offcanvas__theCloser {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 50px;
+	height: 50px;
+	border: 2px solid color('neutrals-4');
+	border-radius: 13px;
+	background-color: color('neutrals-5');
+
+	.is-urgent & {
+		border-color: color('theme-5');
+		background-color: color('theme-5');
+	}
+}
+
+.offcanvas__theCloser__symbol {
+	display: block;
+	width: 15px;
+	height: 15px;
+
+	::v-deep svg {
+		color: color('alt-1');
+
+		.is-urgent & {
+			color: color('light');
+		}
+	}
+}
+
+.offcanvas__content {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin: 0;
+	padding: gap('xs') gap('xxl') 0;
+}

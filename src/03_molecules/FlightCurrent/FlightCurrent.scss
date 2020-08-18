@@ -1,0 +1,255 @@
+@import '@/01_fundaments/vars';
+@import '@/01_fundaments/transitions/_fade';
+
+
+.flightCurrent {
+	position: relative;
+	display: flex;
+	width: 100%;
+	// height: 100%;
+}
+
+.flightCurrent__timeManager__loader {
+	transform: translate(-50%,-50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+
+	::v-deep .loader__icon {
+		display: none;
+	}
+}
+
+.flightCurrent__inner {
+	transition: opacity 250ms ease;
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+		opacity: 1;
+
+	&.is-loading {
+		opacity: 0;
+	}
+}
+
+.flightCurrent__timeManager {
+	position: relative;
+	display: block;
+	height: 125px;
+}
+
+.flightCurrent__timeManager__inner {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	color: color('light');
+	transition: opacity 500ms ease;
+	opacity: 0;
+
+	&.is-loaded {
+		opacity: 1;
+	}
+}
+
+.flightCurrent__timeManager__symbol {
+	display: block;
+	width: 18px;
+	height: 18px;
+
+	::v-deep svg {
+		fill: color('light');
+	}
+}
+
+.flightCurrent__timeManager__currentTime {
+	padding-top: gap('xs');
+	color: color('light');
+	font-family: font('semibold');
+	font-size: titleSize('h2');
+	line-height: 1;
+
+	strong {
+		color: color('light');
+		font-family: font('semibold');
+	}
+}
+
+.flightCurrent__timeManager__departTime {
+	display: flex;
+	align-items: center;
+	padding-top: gap('xs');
+}
+
+.flightCurrent__timeManager__departTime__symbol {
+	display: block;
+	width: 41px;
+	height: 19px;
+	margin-right: gap('xxs');
+
+	::v-deep svg {
+		fill: color('light');
+	}
+}
+
+.flightCurrent__timeManager__departTime__label {
+	color: color('light');
+	font-family: font('bold');
+	font-size: fontSize('s');
+}
+
+.flightCurrent__theStop {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	width: 100%;
+	margin: auto;
+	padding: gap('xxl') 0;
+
+	&:before {
+		display: block;
+		flex: 1;
+		height: 5px;
+		margin-top: 55px;
+		padding-left: gap('xxl');
+		background-image: url('./graphics/dots.png');
+		background-position: 100% 0;
+		background-size: 15px;
+		opacity: .2;
+		content: '';
+	}
+
+	&.is-last::after {
+		display: block;
+		flex: 1;
+		height: 5px;
+		margin-top: 55px;
+		padding-left: gap('xxl');
+		content: '';
+	}
+}
+
+.flightCurrent__theStop__inner {
+	display: flex;
+	flex: 10;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	flex-wrap: wrap;
+	padding: 0 gap('xxl');
+	overflow: hidden;
+}
+
+.flightCurrent__theStop__header {
+	position: relative;
+	color: color('light');
+	text-align: center;
+
+	&:before,
+	&:after {
+		position: absolute;
+		top: 55px;
+		right: 100%;
+		display: block;
+		width: 9999px;
+		height: 5px;
+		background-image: url('./graphics/dots.png');
+		background-position: -5px 0;
+		background-size: 15px;
+		opacity: .2;
+		content: '';
+	}
+
+	&:after {
+		right: auto;
+		left: 100%;
+
+		.is-last & {
+			display: none;
+		}
+	}
+}
+
+.flightCurrent__theStop__header__label {
+	display: block;
+	color: color('alt-3');
+	font-family: font('bold');
+	text-transform: uppercase;
+}
+
+.flightCurrent__theStop__outer {
+	display: flex;
+	flex: 1;
+	justify-content: flex-end;
+	padding: gap('l') 0 0;
+}
+
+.flightCurrent__theStop__outer__content {
+	display: inline-flex;
+	flex: 0;
+	align-items: center;
+	flex-direction: column;
+	padding-left: gap('xs');
+	color: color('theme-5');
+	font-family: font('bold');
+	text-transform: uppercase;
+}
+
+.flightCurrent__theStop__outer__symbol {
+	display: block;
+	width: 18px;
+	height: 18px;
+
+	::v-deep svg {
+		fill: color('theme-5');
+	}
+}
+
+.flightCurrent__theStop__outer__label {
+	padding-top: gap('xxs');
+	font-size: fontSize('s');
+	line-height: 1;
+	white-space: nowrap;
+}
+
+.flightCurrent__theStop__outer__time {
+	font-size: fontSize('xl');
+	line-height: 1;
+}
+
+.flightCurrent__actions {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 100%;
+	padding-top: gap('xs');
+	justify-content: center;
+
+	align-self: flex-start;
+}
+
+.flightCurrent__actions__item {
+	flex: 0 1 80%;
+	padding: gap('xs') gap('xxs') 0;
+	
+	.is-last & {
+		flex: 1 0 50%;
+	}
+}
+
+.flightCurrent__actions__button__symbol {
+	width: 45px;
+	height: 21px;
+}
+
+.flightCurrent__actions__timeLabel {
+	margin-left: gap('s');
+	color: color('positive-darker');
+	font-family: font('medium');
+	font-size: 32px;
+	line-height: 1;
+	letter-spacing: 1.25px;
+}

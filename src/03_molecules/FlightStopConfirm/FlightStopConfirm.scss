@@ -1,0 +1,66 @@
+@import '@/01_fundaments/vars';
+
+
+.flightStopConfirm {
+	position: relative;
+	display: block;
+}
+
+.flightStopConfirm__inner {
+	display: block;
+	width: 65vw;
+
+	&.is-loading {
+		opacity: 0;
+	}
+}
+
+.flightStopConfirm__loader {
+	transform: translate(-50%,-50%);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+}
+
+.flightStopConfirm__header {
+	display: flex;
+	align-items: center;
+	font-family: font('bold');
+	text-align: center;
+	text-transform: uppercase;
+
+	flex-flow: column wrap;
+}
+
+.flightStopConfirm__header__subtitle {
+	padding: gap('xs') 0;
+	color: color('neutrals-1');
+	font-size: fontSize('s');
+	line-height: 1;
+}
+
+.flightStopConfirm__header__title {
+	color: color('brand-1');
+}
+
+.flightStopConfirm__content {
+	margin-top: gap('s');
+	padding: 0 gap('m');
+	color: color('neutrals-1');
+	font-family: font('medium');
+	text-align: center;
+}
+
+.flightStopConfirm__actions {
+	padding: gap('xxl') gap('xxl') 0;
+}
+
+.flightStopConfirm__actions__item {
+	padding-top: gap('xs');
+	
+	&:first-child {
+		padding-top: 0;
+	}
+}
+
+

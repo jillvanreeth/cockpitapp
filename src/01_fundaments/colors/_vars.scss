@@ -1,0 +1,88 @@
+@import 'functions';
+
+$colors: (
+  'light': #FFF,
+  'dark': #000,
+  'disabled': #F8F8F8,
+  'positive': #599255,
+  'positive-darker': #20491D,
+  'positive-lighter': #90B48E,
+  'negative': #C4271E,
+  'negative-darker': #A01226,
+  'negative-lighter': #CFB6B9,
+  'brand-1': #0C3764,
+  'brand-2': #BC0D26,
+  'neutrals-0': #2D3D43,
+  'neutrals-1': #6F8591,
+  'neutrals-2': #A4AFB5,
+  'neutrals-3': #BAC5CA,
+  'neutrals-4': #D7DFE2,
+  'neutrals-5': #E4EAED,
+  'neutrals-6': #F1F4F5,
+  'neutrals-7': #D8D8D8,
+  'neutrals-8': #E8E8E8,
+  'neutrals-9': #FAF9F9,
+  'neutrals-10': #FDFDFD,
+  'theme-0': #0E151D,
+  'theme-1': #001930,
+	'theme-2': #224564,
+	'theme-3': #143F6A,
+	'theme-4': #325475,
+	'theme-5': #5E7A97,
+	'theme-6': #0b3056,
+	'alt-0': #1E3B46,
+	'alt-1': #365663,
+	'alt-2': #608496,
+	'alt-3': #BCDAE1,
+	'alt-4': #D6EFF4,
+);
+
+$colorpairings: (
+	'pairing-brand-1': (
+		'primary': #0C3764,
+		'secondary': #FFF,
+		'tertiary': #608496,
+	),
+	'pairing-brand-2': (
+		'primary': #BC0D26,
+		'secondary': #FFF,
+		'tertiary': #690C19,
+	),
+	'pairing-dark': (
+		'primary': #000,
+		'secondary': #FFF,
+	),
+	'pairing-positive': (
+		'primary': #599255,
+		'secondary': #FFF,
+		'tertiary': #20491D,
+	),
+	'pairing-medium': (
+		'primary': #E4EAED,
+		'secondary': #365663,
+		'tertiary': #6F8591,
+	),
+	'pairing-neutrals-4': (
+		'primary':#D7DFE2,
+		'secondary': #365663,
+	),
+	'pairing-neutrals-5': (
+		'primary':#E4EAED,
+		'secondary': #365663,
+		'tertiary': #D7DFE2,
+	),
+	'pairing-neutrals-9': (
+		'primary': #FAF9F9,
+		'secondary': #6F8591,
+		'tertiary': #D7DFE2,
+	),
+	'pairing-neutrals-10': (
+		'primary': #FDFDFD,
+		'secondary': #6F8591,
+		'tertiary': #E4EAED,
+	),
+	'pairing-theme-1': (
+		'primary': #001930,
+		'secondary': #FFF,
+	),
+);

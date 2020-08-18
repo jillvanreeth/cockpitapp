@@ -1,0 +1,11 @@
+@function fontSize($size: 'medium') {
+	@return map-get($fontSizes, quote($size));
+}
+
+@function titleSize($size: 'medium') {
+	@return map-get($titleSizes, quote($size));
+}
+
+@function font($size: 'medium') {
+	@return map-get($fonts, $size);
+}

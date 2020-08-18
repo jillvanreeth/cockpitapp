@@ -1,0 +1,9 @@
+@each $colorName, $colorValue, $color in $colors {
+  .fc--#{$colorName} {
+    color: color(#{$colorName});
+  }
+
+  .bgc--#{$colorName} {
+    background-color: color(#{$colorName});
+  }
+}

@@ -1,0 +1,102 @@
+@import '@/01_fundaments/vars';
+@import '@/01_fundaments/transitions/_fade';
+
+
+.checklistPanel {
+	display: flex;
+	flex: 1;
+	height: 100%;
+	overflow: hidden;
+	border-radius: 8px 8px 0 0;
+	background-color: color('light');
+	box-shadow: 0 -3px 22px 0 rgba(color('alt-1'), .1);
+}
+
+.checklistPanel__aside {
+	display: flex;
+	flex: 1 0 30%;
+	flex-direction: column;
+	background-color: color('neutrals-6');
+	position: relative;
+
+	&:after {
+		position: absolute;
+		bottom: 0;
+		left: 100%;
+		z-index: 1;
+		width: 20px;
+		height: 100%;
+		background: linear-gradient(90deg, rgba(color('alt-1'),.1) 0%, rgba(color('alt-1'),0) 100%);
+		content: '';
+	}
+}
+
+.checklistPanel__aside__inner {
+	padding: gap('xxl') gap('xl');
+}
+
+.checklistPanel__aside__item {
+	padding-top: gap('xl');
+	color: color('brand-1');
+
+	&:first-child {
+		padding-top: 0;
+	}
+}
+
+.checklistPanel__date__nameOfDay {
+	display: block;
+	color: color('brand-1');
+	font-family: font('bold');
+	font-size: fontSize('xs');
+	text-transform: uppercase;
+}
+
+.checklistPanel__date__theDate {
+	color: color('brand-1');
+	font-family: font('medium');
+	font-size: fontSize('xxl');
+	line-height: 1;
+}
+
+.checklistPanel__steps {
+	position: relative;
+	display: flex;
+	flex: 2 1 70%;
+	flex-direction: column;
+	height: 100%;
+	padding: gap('xxl') gap('m') gap('m');
+}
+
+.checklistPanel__steps__inner {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	overflow-y: scroll;
+}
+
+.checklistPanel__steps__nextBtn {
+	display: flex;
+	margin-top: auto;
+	padding-top: gap('xxl');
+}
+
+.checklistPanel__steps__readyBtn {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: 2;
+	width: 100%;
+
+	&:after {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: -1;
+		width: 100%;
+		height: 150px;
+		background: linear-gradient(rgba(color('alt-1'), 0) 30%, color('alt-1') 100%);
+		content: '';
+	}
+}

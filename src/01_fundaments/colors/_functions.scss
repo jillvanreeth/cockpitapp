@@ -1,0 +1,3 @@
+@function color($name: false, $mod: false, $amount: 7) {
+  @return map-get($colors, quote($name));
+}

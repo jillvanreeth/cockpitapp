@@ -1,0 +1,36 @@
+.directionalButton {
+	transition: color 150ms, border-color 150ms, background-color 150ms;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 60px;
+	height: 60px;
+	margin: 0;
+	padding: 0;
+	border-radius: 16px;
+	border: 2px solid color('neutrals-8');
+	appearance: none;
+	box-shadow: none;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.directionalButton[disabled],
+.directionalButton.is-disabled {
+	color: color('neutrals-4');
+	border: 2px solid;
+	border-color: darken(color('disabled'), 2);
+	background-color: color('disabled');
+	box-shadow: none;
+	cursor: not-allowed;
+}
+
+.directionalButton__symbol {
+	display: block;
+	width: 12px;
+	height: 12px;
+
+	::v-deep svg {
+		fill: color('neutrals-7');
+	}
+}
